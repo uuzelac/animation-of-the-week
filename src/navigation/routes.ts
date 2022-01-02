@@ -1,2 +1,2 @@
-export const HOME = 'Home';
-export const NOTIFICATION = 'Notification';
+export const HOME = 'HOME';
+export const NOTIFICATION_TOAST = 'NOTIFICATION_TOAST';

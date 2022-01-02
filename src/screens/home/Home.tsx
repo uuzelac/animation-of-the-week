@@ -6,25 +6,12 @@ import ListItem from './components/listItem';
 import HorizontalLine from './components/horizontalLine';
 import styles from './styles';
 import { blue } from '../../theme/colors';
+import { NOTIFICATION_TOAST } from '../../navigation/routes';
+import { HomeNavProps } from '../../navigation/types';
 
-const data = [
-  {
-    id: '1',
-    onPress: () => {},
-    iconDefinition: faBell,
-    iconColor: blue,
-    title: 'Notification toast',
-  },
-  {
-    id: '2',
-    onPress: () => {},
-    iconDefinition: faWindowMaximize,
-    iconColor: blue,
-    title: 'Bottom sheet',
-  },
-];
+type Props = HomeNavProps;
 
-const Home = (): JSX.Element => {
+const Home = ({ navigation }: Props): JSX.Element => {
   const renderItem = ({ item }): JSX.Element => (
     <ListItem
       onPress={item.onPress}
@@ -37,6 +24,23 @@ const Home = (): JSX.Element => {
   const renderSeparator = () => <HorizontalLine />;
 
   const returnKeyExtractor = (item) => item.id;
+
+  const data = [
+    {
+      id: '1',
+      onPress: () => navigation.navigate(NOTIFICATION_TOAST),
+      iconDefinition: faBell,
+      iconColor: blue,
+      title: 'Notification toast',
+    },
+    {
+      id: '2',
+      onPress: () => {},
+      iconDefinition: faWindowMaximize,
+      iconColor: blue,
+      title: 'Bottom sheet',
+    },
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
