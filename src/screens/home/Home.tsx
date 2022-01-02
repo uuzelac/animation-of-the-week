@@ -1,8 +1,7 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, Text, FlatList } from 'react-native';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faMeteor, faBell, faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
 import ListItem from './components/listItem';
 import HorizontalLine from './components/horizontalLine';
 import styles from './styles';
@@ -42,9 +41,7 @@ const Home = (): JSX.Element => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.containerLogo}>
-        <Text style={styles.textLogo}>
-          Animation of the {'\n'}Week <FontAwesomeIcon icon={faMeteor} color={blue} size={32} />
-        </Text>
+        <Text style={styles.textLogo}>Animation of the {'\n'}Week</Text>
       </View>
       <FlatList
         ItemSeparatorComponent={renderSeparator}

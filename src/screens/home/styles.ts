@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   },
   textLogo: {
     color: blue,
-    fontFamily: 'OpenSans-Light',
-    fontSize: 40,
+    fontFamily: 'OpenSans-ExtraBold',
+    fontSize: 32,
   },
 });
 
