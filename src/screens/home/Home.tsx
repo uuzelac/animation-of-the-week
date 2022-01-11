@@ -6,8 +6,9 @@ import ListItem from './components/listItem';
 import HorizontalLine from './components/horizontalLine';
 import styles from './styles';
 import { blue } from '../../theme/colors';
-import { NOTIFICATION_TOAST } from '../../navigation/routes';
+import { NOTIFICATION_TOAST } from '../../navigation/routeNames';
 import { HomeNavProps } from '../../navigation/types';
+import * as screenTitles from '../../navigation/screenTitles';
 
 type Props = HomeNavProps;
 
@@ -31,14 +32,14 @@ const Home = ({ navigation }: Props): JSX.Element => {
       onPress: () => navigation.navigate(NOTIFICATION_TOAST),
       iconDefinition: faBell,
       iconColor: blue,
-      title: 'Notification toast',
+      title: screenTitles.NOTIFICATION_TOAST,
     },
     {
       id: '2',
       onPress: () => {},
       iconDefinition: faWindowMaximize,
       iconColor: blue,
-      title: 'Bottom sheet',
+      title: screenTitles.BOTTOM_SHEET,
     },
   ];
 
