@@ -40,6 +40,7 @@ const Toast = ({ showToast, message, type }: Props): JSX.Element => {
   return (
     <Animated.View
       style={[
+        styles.commonToastStyle,
         type === ToastType.Top ? styles.topToastStyle : styles.bottomToastStyle,
         animatedStyle,
       ]}
