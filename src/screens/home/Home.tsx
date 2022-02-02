@@ -1,8 +1,9 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, ListRenderItem } from 'react-native';
 import { faBell, faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
 import ListItem from './components/listItem';
+import { ListItemProps } from './components/listItem/types';
 import HorizontalLine from './components/horizontalLine';
 import styles from './styles';
 import { blue } from '../../theme/colors';
@@ -13,18 +14,19 @@ import * as screenTitles from '../../navigation/screenTitles';
 type Props = HomeNavProps;
 
 const Home = ({ navigation }: Props): JSX.Element => {
-  const renderItem = ({ item }): JSX.Element => (
+  const renderItem: ListRenderItem<ListItemProps> = ({ item }): JSX.Element => (
     <ListItem
+      id={item.id}
       onPress={item.onPress}
       iconDefinition={item.iconDefinition}
       iconColor={item.iconColor}
-      itemTitle={item.title}
+      title={item.title}
     />
   );
 
   const renderSeparator = () => <HorizontalLine />;
 
-  const returnKeyExtractor = (item) => item.id;
+  const returnKeyExtractor = (item: ListItemProps): string => item.id;
 
   const data = [
     {

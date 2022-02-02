@@ -1,22 +1,15 @@
 import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles';
+import { ListItemProps } from './types';
 
-interface Props {
-  onPress: () => void;
-  iconDefinition: IconDefinition;
-  iconColor: string;
-  itemTitle: string;
-}
-
-const ListItem: React.FC<Props> = ({
+const ListItem: React.FC<ListItemProps> = ({
   onPress,
   iconDefinition,
   iconColor,
-  itemTitle,
-}: Props): JSX.Element => {
+  title,
+}: ListItemProps): JSX.Element => {
   return (
     <Pressable onPress={onPress}>
       <View style={styles.container}>
@@ -26,7 +19,7 @@ const ListItem: React.FC<Props> = ({
           size={24}
           style={styles.iconStyle}
         />
-        <Text style={styles.textStyle}>{itemTitle}</Text>
+        <Text style={styles.textStyle}>{title}</Text>
       </View>
     </Pressable>
   );
