@@ -10,7 +10,7 @@ import * as screenOptions from './screenOptions';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const Router = () => {
+const Router = (): JSX.Element => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
