@@ -4,7 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/home';
 import NotificationToast from '../projects/notificationToast';
-import { HOME, NOTIFICATION_TOAST } from './routeNames';
+import BatteryCharging from '../projects/batteryCharging';
+import { HOME, NOTIFICATION_TOAST, BATTERY_CHARGING } from './routeNames';
 import { RootStackParamList } from './types';
 import * as screenOptions from './screenOptions';
 
@@ -20,6 +21,11 @@ const Router = (): JSX.Element => {
             name={NOTIFICATION_TOAST}
             component={NotificationToast}
             options={screenOptions.notificationToast}
+          />
+          <Stack.Screen
+            name={BATTERY_CHARGING}
+            component={BatteryCharging}
+            options={screenOptions.batteryCharging}
           />
         </Stack.Navigator>
       </NavigationContainer>

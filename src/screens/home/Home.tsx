@@ -1,13 +1,13 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, Text, FlatList, ListRenderItem } from 'react-native';
-import { faBell, faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faWindowMaximize, faBatteryHalf } from '@fortawesome/free-solid-svg-icons';
 import ListItem from './components/listItem';
 import { ListItemProps } from './components/listItem/types';
 import HorizontalLine from './components/horizontalLine';
 import styles from './styles';
 import { blue } from '../../theme/colors';
-import { NOTIFICATION_TOAST } from '../../navigation/routeNames';
+import { NOTIFICATION_TOAST, BATTERY_CHARGING } from '../../navigation/routeNames';
 import { HomeNavProps } from '../../navigation/types';
 import * as screenTitles from '../../navigation/screenTitles';
 
@@ -42,6 +42,13 @@ const Home = ({ navigation }: Props): JSX.Element => {
       iconDefinition: faWindowMaximize,
       iconColor: blue,
       title: screenTitles.BOTTOM_SHEET,
+    },
+    {
+      id: '3',
+      onPress: () => navigation.navigate(BATTERY_CHARGING),
+      iconDefinition: faBatteryHalf,
+      iconColor: blue,
+      title: screenTitles.BATTERY_CHARGING,
     },
   ];
 
