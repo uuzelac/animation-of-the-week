@@ -5,7 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/home';
 import NotificationToast from '../projects/notificationToast';
 import BatteryCharging from '../projects/batteryCharging';
-import { HOME, NOTIFICATION_TOAST, BATTERY_CHARGING } from './routeNames';
+import LoadingAnimation from '../projects/loadingAnimation';
+import { HOME, NOTIFICATION_TOAST, BATTERY_CHARGING, LOADING_ANIMATION } from './routeNames';
 import { RootStackParamList } from './types';
 import * as screenOptions from './screenOptions';
 
@@ -26,6 +27,11 @@ const Router = (): JSX.Element => {
             name={BATTERY_CHARGING}
             component={BatteryCharging}
             options={screenOptions.batteryCharging}
+          />
+          <Stack.Screen
+            name={LOADING_ANIMATION}
+            component={LoadingAnimation}
+            options={screenOptions.loadingAnimation}
           />
         </Stack.Navigator>
       </NavigationContainer>

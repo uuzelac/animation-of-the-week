@@ -1,13 +1,18 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, Text, FlatList, ListRenderItem } from 'react-native';
-import { faBell, faWindowMaximize, faBatteryHalf } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBell,
+  faWindowMaximize,
+  faBatteryHalf,
+  faCircle,
+} from '@fortawesome/free-solid-svg-icons';
 import ListItem from './components/listItem';
 import { ListItemProps } from './components/listItem/types';
 import HorizontalLine from './components/horizontalLine';
 import styles from './styles';
 import { blue } from '../../theme/colors';
-import { NOTIFICATION_TOAST, BATTERY_CHARGING } from '../../navigation/routeNames';
+import * as ROUTE_NAMES from '../../navigation/routeNames';
 import { HomeNavProps } from '../../navigation/types';
 import * as screenTitles from '../../navigation/screenTitles';
 
@@ -31,7 +36,7 @@ const Home = ({ navigation }: Props): JSX.Element => {
   const data = [
     {
       id: '1',
-      onPress: () => navigation.navigate(NOTIFICATION_TOAST),
+      onPress: () => navigation.navigate(ROUTE_NAMES.NOTIFICATION_TOAST),
       iconDefinition: faBell,
       iconColor: blue,
       title: screenTitles.NOTIFICATION_TOAST,
@@ -45,10 +50,17 @@ const Home = ({ navigation }: Props): JSX.Element => {
     },
     {
       id: '3',
-      onPress: () => navigation.navigate(BATTERY_CHARGING),
+      onPress: () => navigation.navigate(ROUTE_NAMES.BATTERY_CHARGING),
       iconDefinition: faBatteryHalf,
       iconColor: blue,
       title: screenTitles.BATTERY_CHARGING,
+    },
+    {
+      id: '4',
+      onPress: () => navigation.navigate(ROUTE_NAMES.LOADING_ANIMATION),
+      iconDefinition: faCircle,
+      iconColor: blue,
+      title: screenTitles.LOADING_ANIMATION,
     },
   ];
 

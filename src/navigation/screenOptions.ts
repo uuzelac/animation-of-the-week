@@ -10,3 +10,7 @@ export const notificationToast: NativeStackNavigationOptions = {
 export const batteryCharging: NativeStackNavigationOptions = {
   title: screenTitles.BATTERY_CHARGING,
 };
+
+export const loadingAnimation: NativeStackNavigationOptions = {
+  title: screenTitles.LOADING_ANIMATION,
+};
